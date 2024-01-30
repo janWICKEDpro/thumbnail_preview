@@ -20,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   String? url = "";
   bool loading = false;
   bool showError = false;
-  Uint8List? imageBytes;
+  Uint8List? imageurl;
   final service = ThumbnailService();
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //thumbnail-box
-                (imageBytes == null && showError)
+                (imageurl == null && showError)
                     ? ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
@@ -43,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
                           fit: BoxFit.cover,
                         ),
                       )
-                    : (imageBytes == null)
+                    : (imageurl == null)
                         ? Container(
                             height: 150,
                             decoration: BoxDecoration(
@@ -57,19 +57,43 @@ class _MainScreenState extends State<MainScreen> {
                             ),
                           )
                         : GestureDetector(
-                            onTap: () =>
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => PlayVideoScreen(
-                                          url: url!,
-                                          controller: service.controller,
-                                        ))),
+                            onTap: () {
+                              setState(() {
+                                imageurl = null;
+                              });
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => PlayVideoScreen(
+                                        url: url!,
+                                        controller: service.controller,
+                                      )));
+                            },
                             child: SizedBox(
                               height: constraints.maxHeight * 0.2,
                               width: constraints.maxWidth,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(5),
                                 child: Image.memory(
-                                  imageBytes!,
+                                  imageurl!,
+                                  // loadingBuilder:
+                                  //     (context, child, loadingProgress) {
+                                  //   if (loadingProgress == null) {
+                                  //     return child;
+                                  //   }
+                                  //   return SizedBox(
+                                  //     height: 100,
+                                  //     width: 100,
+                                  //     child: Center(
+                                  //       child: CircularProgressIndicator(
+                                  //         value: loadingProgress
+                                  //                 .cumulativeBytesLoaded /
+                                  //             loadingProgress
+                                  //                 .expectedTotalBytes!,
+                                  //         color: Colors.cyan,
+                                  //         strokeWidth: 2,
+                                  //       ),
+                                  //     ),
+                                  //   );
+                                  // },
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -93,6 +117,7 @@ class _MainScreenState extends State<MainScreen> {
                       });
                     }),
                 const Gap(20),
+
                 SizedBox(
                   height: 50,
                   width: 200,
@@ -106,10 +131,10 @@ class _MainScreenState extends State<MainScreen> {
                           loading = true;
                         });
                         try {
-                          final thumbnailBytes =
+                          final thumnailUrl =
                               await service.generateThumbnailImage(url!);
                           setState(() {
-                            imageBytes = thumbnailBytes;
+                            imageurl = thumnailUrl;
                             showError = false;
                             loading = false;
                           });

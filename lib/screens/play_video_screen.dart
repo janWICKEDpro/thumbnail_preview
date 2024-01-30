@@ -20,19 +20,17 @@ class PlayVideoScreenState extends State<PlayVideoScreen> {
 
     _controller = widget.controller;
 
-    _controller.addListener(() {
-      if (mounted) {
-        setState(() {});
-      }
-    });
+    // _controller.addListener(() {
+    //   if (mounted) {
+    //     setState(() {});
+    //   }
+    // });
     _controller.setLooping(true);
-    _controller.initialize();
     _controller.play();
   }
 
   @override
   void dispose() {
-    // _controller.dispose();
     widget.controller.dispose();
     super.dispose();
   }

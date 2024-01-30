@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 final formKey = GlobalKey<FormState>();
+List<String> texts = [
+  "Metricool team",
+  "Tips redes Sociales",
+  "Metricool family"
+];
 const String regexPattern =
     r'^(http|https):\/\/[\w\-]+(\.[\w\-]+)+[\w\-.,@?^=%&:/~\+#]*[\w\-@?^=%&/~\+#]\.mp4$';
 final RegExp regExp = RegExp(regexPattern);
