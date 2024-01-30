@@ -65,11 +65,10 @@ class PlayVideoScreenState extends State<PlayVideoScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Container(padding: const EdgeInsets.only(top: 20.0)),
           Container(
             padding: const EdgeInsets.all(20),
             child: AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
+              aspectRatio: 2 / 4,
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: <Widget>[

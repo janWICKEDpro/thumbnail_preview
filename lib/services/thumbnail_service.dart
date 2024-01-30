@@ -3,7 +3,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:thumbnail_generator/services/models/video.dart';
 import 'package:video_player/video_player.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';
-import 'package:http/http.dart' as http;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:typed_data';
 

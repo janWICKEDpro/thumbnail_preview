@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:collection/collection.dart';
@@ -53,7 +52,7 @@ class _ProfileState extends State<Profile> {
               child: AnimatedContainer(
                 duration: Duration(seconds: 1),
                 color: Colors.cyan,
-                height: isUploading ? 40 : 0,
+                height: isUploading ? 30 : 0,
                 child: Center(
                     child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -92,10 +91,15 @@ class _ProfileState extends State<Profile> {
               PopupMenuButton(
                   child: Row(
                     children: [
-                      Text(
-                        "Co",
-                        style: GoogleFonts.roboto(fontSize: 16),
+                      Gap(2),
+                      Transform.rotate(
+                        angle: math.pi / 2,
+                        child: Text(
+                          "8",
+                          style: GoogleFonts.roboto(fontSize: 16),
+                        ),
                       ),
+                      Gap(2),
                       Stack(
                         children: [
                           Positioned(
@@ -169,68 +173,72 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
             ),
+            Gap(10),
             Text(
               "@metricool_com",
               style: GoogleFonts.roboto(fontWeight: FontWeight.w600),
             ),
             const Gap(20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      "146",
-                      style: GoogleFonts.roboto(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Following",
-                      style: GoogleFonts.roboto(
-                          color: Colors.grey.withOpacity(0.9),
-                          fontWeight: FontWeight.w400),
-                    )
-                  ],
-                ),
-                Gap(20),
-                Column(
-                  children: [
-                    Text(
-                      "40,k",
-                      style: GoogleFonts.roboto(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Follower",
-                      style: GoogleFonts.roboto(
-                          color: Colors.grey.withOpacity(0.9),
-                          fontWeight: FontWeight.w400),
-                    )
-                  ],
-                ),
-                Gap(20),
-                Column(
-                  children: [
-                    Text(
-                      "182,6k",
-                      style: GoogleFonts.roboto(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Likes",
-                      style: GoogleFonts.roboto(
-                          color: Colors.grey.withOpacity(0.9),
-                          fontWeight: FontWeight.w400),
-                    )
-                  ],
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        "146",
+                        style: GoogleFonts.roboto(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Following",
+                        style: GoogleFonts.roboto(
+                            color: Colors.grey.withOpacity(0.9),
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "40,k",
+                        style: GoogleFonts.roboto(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Follower",
+                        style: GoogleFonts.roboto(
+                            color: Colors.grey.withOpacity(0.9),
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        "182,6k",
+                        style: GoogleFonts.roboto(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Likes",
+                        style: GoogleFonts.roboto(
+                            color: Colors.grey.withOpacity(0.9),
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
                   style: ButtonStyle(
+                      side: MaterialStateProperty.all(
+                          BorderSide(color: Colors.grey.withOpacity(0.8))),
                       backgroundColor: MaterialStateProperty.all(Colors.white),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
@@ -248,6 +256,8 @@ class _ProfileState extends State<Profile> {
                 const Gap(5),
                 OutlinedButton(
                     style: ButtonStyle(
+                        side: MaterialStateProperty.all(
+                            BorderSide(color: Colors.grey.withOpacity(0.8))),
                         padding:
                             MaterialStateProperty.all(const EdgeInsets.all(0)),
                         backgroundColor:
@@ -267,9 +277,9 @@ class _ProfileState extends State<Profile> {
             ),
             Gap(10),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 60.0),
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
               child: Text(
-                "ANALYSIS [] PLANIFICATION[] INFORMES [] ADS '\$'",
+                "ANALYSIS 📉 PLANIFICATION🗓 INFORMES📰 ADS💲 \n 👇Comienza GRATIS ahora.",
                 style: GoogleFonts.roboto(),
                 textAlign: TextAlign.center,
               ),

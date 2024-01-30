@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:thumbnail_generator/screens/play_video_screen.dart';
@@ -25,6 +24,20 @@ class _ThumbnailState extends State<Thumbnail> {
       videoPlayerOptions: VideoPlayerOptions(),
     );
     _controller.initialize();
+    // Navigator.of(context).addListener(navigatorListener);
+  }
+
+  void navigatorListener() {
+    // Check if the route stack has changed
+    if (!mounted) return;
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    // Remove the listener when the screen is disposed
+    //Navigator.of(context).removeListener(navigatorListener);
+    super.dispose();
   }
 
   @override
@@ -34,7 +47,11 @@ class _ThumbnailState extends State<Thumbnail> {
         await Navigator.of(context).push(MaterialPageRoute(
             builder: (context) =>
                 PlayVideoScreen(url: widget.url!, controller: _controller)));
-        setState(() {});
+        _controller = VideoPlayerController.networkUrl(
+          Uri.parse(widget.url!),
+          videoPlayerOptions: VideoPlayerOptions(),
+        );
+        _controller.initialize();
       },
       child: Stack(
         children: [
@@ -48,8 +65,16 @@ class _ThumbnailState extends State<Thumbnail> {
                   fit: BoxFit.cover,
                   imageUrl: widget.thumbnail!,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
-                      CircularProgressIndicator(
+                      SizedBox(
+                    height: 100,
+                    width: 100,
+                    child: Center(
+                      child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: Colors.cyan,
                           value: downloadProgress.progress),
+                    ),
+                  ),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 )
                 // Image.network(
