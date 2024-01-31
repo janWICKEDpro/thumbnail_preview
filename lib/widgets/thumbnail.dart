@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -100,6 +102,20 @@ class _ThumbnailState extends State<Thumbnail> {
                 // ),
                 ),
           ),
+          // BackdropFilter(
+          //   filter: ImageFilter.blur(
+          //       sigmaX: 5,
+          //       sigmaY:
+          //           5), // Adjust the sigmaX and sigmaY values for the desired blur effect
+          //   child: Container(
+          //     width: MediaQuery.of(context).size.width / 3,
+          //     height: 200,
+          //     decoration: BoxDecoration(
+          //       color: Colors.black.withOpacity(
+          //           0.1), // Adjust the opacity and color as per your preference
+          //     ),
+          //   ),
+          // ),
           (widget.index >= 0 && widget.index <= 2)
               ? Positioned(
                   top: 0,

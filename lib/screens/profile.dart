@@ -133,133 +133,113 @@ class _ProfileState extends State<Profile> {
           leading: IconButton(
               onPressed: () {}, icon: const Icon(Icons.person_add_outlined)),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(
-              child: Stack(
-                children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(50)),
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: FloatingActionButton(
-                      onPressed: () {},
-                      elevation: 0,
-                      mini: true,
-                      shape: const CircleBorder(eccentricity: 1.0),
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      backgroundColor: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(1.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.cyan,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: const Icon(
-                            Icons.add,
-                            color: Colors.white,
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(50)),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: FloatingActionButton(
+                        onPressed: () {},
+                        elevation: 0,
+                        mini: true,
+                        shape: const CircleBorder(eccentricity: 1.0),
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        backgroundColor: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.all(1.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.cyan,
+                                borderRadius: BorderRadius.circular(15)),
+                            child: const Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Gap(10),
-            Text(
-              "@metricool_com",
-              style: GoogleFonts.roboto(fontWeight: FontWeight.w600),
-            ),
-            const Gap(20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        "146",
-                        style: GoogleFonts.roboto(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Following",
-                        style: GoogleFonts.roboto(
-                            color: Colors.grey.withOpacity(0.9),
-                            fontWeight: FontWeight.w400),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        "40,k",
-                        style: GoogleFonts.roboto(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Follower",
-                        style: GoogleFonts.roboto(
-                            color: Colors.grey.withOpacity(0.9),
-                            fontWeight: FontWeight.w400),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        "182,6k",
-                        style: GoogleFonts.roboto(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Likes",
-                        style: GoogleFonts.roboto(
-                            color: Colors.grey.withOpacity(0.9),
-                            fontWeight: FontWeight.w400),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                  style: ButtonStyle(
-                      side: MaterialStateProperty.all(
-                          BorderSide(color: Colors.grey.withOpacity(0.8))),
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(2),
-                        ),
-                      ),
-                      elevation: MaterialStateProperty.all(0)),
-                  onPressed: () {},
-                  child: Text(
-                    "Edit Profile",
-                    style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.bold, color: Colors.black),
-                  ),
+                  ],
                 ),
-                const Gap(5),
-                OutlinedButton(
+              ),
+              Gap(10),
+              Text(
+                "@metricool_com",
+                style: GoogleFonts.roboto(fontWeight: FontWeight.w600),
+              ),
+              const Gap(20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "146",
+                          style: GoogleFonts.roboto(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "Following",
+                          style: GoogleFonts.roboto(
+                              color: Colors.grey.withOpacity(0.9),
+                              fontWeight: FontWeight.w400),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          "40,k",
+                          style: GoogleFonts.roboto(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "Follower",
+                          style: GoogleFonts.roboto(
+                              color: Colors.grey.withOpacity(0.9),
+                              fontWeight: FontWeight.w400),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          "182,6k",
+                          style: GoogleFonts.roboto(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "Likes",
+                          style: GoogleFonts.roboto(
+                              color: Colors.grey.withOpacity(0.9),
+                              fontWeight: FontWeight.w400),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(
                     style: ButtonStyle(
                         side: MaterialStateProperty.all(
                             BorderSide(color: Colors.grey.withOpacity(0.8))),
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(0)),
                         backgroundColor:
                             MaterialStateProperty.all(Colors.white),
                         shape: MaterialStateProperty.all(
@@ -269,134 +249,160 @@ class _ProfileState extends State<Profile> {
                         ),
                         elevation: MaterialStateProperty.all(0)),
                     onPressed: () {},
-                    child: const Icon(
-                      Icons.camera_enhance_outlined,
-                      color: Colors.black,
-                    )),
-              ],
-            ),
-            Gap(10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50.0),
-              child: Text(
-                "ANALYSIS 📉 PLANIFICATION🗓 INFORMES📰 ADS💲 \n 👇Comienza GRATIS ahora.",
-                style: GoogleFonts.roboto(),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Transform.rotate(angle: -math.pi / 4, child: Icon(Icons.link)),
-                TextButton(
-                    onPressed: () {},
                     child: Text(
-                      "https://mtr.bio/metricool-tiktok",
+                      "Edit Profile",
                       style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold, color: Colors.black),
-                    ))
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.question_answer_outlined,
-                  color: Colors.pink,
-                ),
-                TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Q&A",
-                      style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                    ))
-              ],
-            ),
-            const TabBar(
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
-              indicatorColor: Colors.black,
-              indicatorSize: TabBarIndicatorSize.tab,
-              tabs: [
-                Tab(icon: Icon(Icons.payment)),
-                Tab(icon: Icon(Icons.lock_outline)),
-                Tab(icon: Icon(Icons.bookmark_add_outlined)),
-                Tab(icon: Icon(Icons.favorite_border)),
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey.withOpacity(0.9)),
-                        borderRadius: BorderRadius.circular(4)),
-                    child: const Icon(Icons.add),
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 60,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: texts.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: const EdgeInsets.all(8.0),
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: Colors.grey.withOpacity(0.9)),
-                                  borderRadius: BorderRadius.circular(4)),
-                              child: Row(
-                                children: [
-                                  const Icon(Icons.library_books_rounded),
-                                  Text(
-                                    texts[index],
-                                    style: GoogleFonts.roboto(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                ],
-                              ),
+                  const Gap(5),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              BorderSide(color: Colors.grey.withOpacity(0.8))),
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.all(0)),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(2),
                             ),
-                          );
-                        }),
+                          ),
+                          elevation: MaterialStateProperty.all(0)),
+                      onPressed: () {},
+                      child: const Icon(
+                        Icons.camera_enhance_outlined,
+                        color: Colors.black,
+                      )),
+                ],
+              ),
+              Gap(10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                child: Text(
+                  "ANALYSIS 📉 PLANIFICATION🗓 INFORMES📰 ADS💲 \n 👇Comienza GRATIS ahora.",
+                  style: GoogleFonts.roboto(),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Transform.rotate(
+                      angle: -math.pi / 4, child: Icon(Icons.link)),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "https://mtr.bio/metricool-tiktok",
+                        style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold, color: Colors.black),
+                      ))
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.question_answer_outlined,
+                    color: Colors.pink,
                   ),
-                ),
-              ],
-            ),
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.camera_enhance),
-                    Gap(2),
-                    Text(
-                      "View expired Stories in \"Your private Videos\" ",
-                      style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.cancel_outlined))
-              ],
-            ),
-            Expanded(
-              child: Container(
-                child: loadingPosts
-                    ? const Center(
-                        child: CircularProgressIndicator(
-                          strokeWidth: 3,
-                          color: Colors.cyan,
-                        ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Q&A",
+                        style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.bold, color: Colors.black),
+                      ))
+                ],
+              ),
+              const TabBar(
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.grey,
+                indicatorColor: Colors.black,
+                indicatorSize: TabBarIndicatorSize.tab,
+                tabs: [
+                  Tab(icon: Icon(Icons.payment)),
+                  Tab(icon: Icon(Icons.lock_outline)),
+                  Tab(icon: Icon(Icons.bookmark_add_outlined)),
+                  Tab(icon: Icon(Icons.favorite_border)),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                          border:
+                              Border.all(color: Colors.grey.withOpacity(0.9)),
+                          borderRadius: BorderRadius.circular(4)),
+                      child: const Icon(Icons.add),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 60,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: texts.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: const EdgeInsets.all(8.0),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.grey.withOpacity(0.9)),
+                                    borderRadius: BorderRadius.circular(4)),
+                                child: Row(
+                                  children: [
+                                    const Icon(Icons.library_books_rounded),
+                                    Text(
+                                      texts[index],
+                                      style: GoogleFonts.roboto(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          }),
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.camera_enhance),
+                      Gap(2),
+                      Text(
+                        "View expired Stories in \"Your private Videos\" ",
+                        style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
                       )
-                    : GridView.count(
+                    ],
+                  ),
+                  IconButton(
+                      onPressed: () {}, icon: Icon(Icons.cancel_outlined))
+                ],
+              ),
+              loadingPosts
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 3,
+                        color: Colors.cyan,
+                      ),
+                    )
+                  : Container(
+                      height: MediaQuery.of(context).size.height,
+                      child: GridView.count(
+                        physics: NeverScrollableScrollPhysics(),
                         crossAxisCount: 3,
                         crossAxisSpacing: 1,
                         mainAxisSpacing: 1,
@@ -408,9 +414,9 @@ class _ProfileState extends State<Profile> {
                               ))
                         ],
                       ),
-              ),
-            )
-          ],
+                    )
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: 4,
